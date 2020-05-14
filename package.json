@@ -24,7 +24,11 @@
         "url": "https://github.com/Nicklason/node-2captcha/issues"
     },
     "homepage": "https://github.com/Nicklason/node-2captcha#readme",
-    "dependencies": {},
+    "dependencies": {
+        "axios": "^0.19.2",
+        "axios-retry": "^3.1.8",
+        "bluebird-global": "^1.0.1"
+    },
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
         "@commitlint/config-conventional": "^8.3.4",
@@ -33,6 +37,7 @@
         "@semantic-release/github": "^7.0.5",
         "@semantic-release/npm": "^7.0.5",
         "@semantic-release/release-notes-generator": "^9.0.1",
+        "@types/bluebird-global": "^3.5.12",
         "@typescript-eslint/eslint-plugin": "^2.33.0",
         "@typescript-eslint/parser": "^2.33.0",
         "commitizen": "^4.1.2",
