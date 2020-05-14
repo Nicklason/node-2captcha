@@ -24,7 +24,8 @@ export class ApiResponseError extends Error {
 export default class TwoCaptcha {
     public apiKey: string;
 
-    constructor(apiKey: string) {
+    constructor(apiKey = '') {
+        // Just make the default be an empty string, then all the error handling will be made by the 2captcha API
         this.apiKey = apiKey;
     }
 
