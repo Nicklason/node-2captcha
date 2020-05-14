@@ -1,7 +1,7 @@
 {
-    "name": "typescript-project",
-    "version": "1.1.1",
-    "description": "A template for creating TypeScript projects",
+    "name": "@nicklason/2captcha",
+    "version": "0.0.0-development",
+    "description": "",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "scripts": {
@@ -16,14 +16,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Nicklason/typescript-project.git"
+        "url": "git+https://github.com/Nicklason/node-2captcha.git"
     },
     "author": "Nicklas Marc Pedersen",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Nicklason/typescript-project/issues"
+        "url": "https://github.com/Nicklason/node-2captcha/issues"
     },
-    "homepage": "https://github.com/Nicklason/typescript-project#readme",
+    "homepage": "https://github.com/Nicklason/node-2captcha#readme",
     "dependencies": {},
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
