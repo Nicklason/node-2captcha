@@ -52,10 +52,12 @@
         "semantic-release": "^17.0.7",
         "typescript": "^3.9.2"
     },
-    "private": true,
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
     }
 }
