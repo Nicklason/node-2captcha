@@ -1,5 +1,3 @@
-import 'bluebird-global';
-
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 
@@ -33,24 +31,34 @@ export default class TwoCaptcha {
         this.apiKey = apiKey;
     }
 
-    // TODO: Proxy support
-
     /**
      * Request a hCaptcha to be solved
      * @param sitekey - Sitekey from the captcha
      * @param pageurl - Url of page where the captcha was located
+     * @param proxyUrl - Url for a proxy with the same IP that the captcha was served to
+     * @param proxyType - The proxy type
      */
     public async solveHcaptcha(
         sitekey: string,
-        pageurl: string
+        pageUrl: string,
+        proxyUrl?: string,
+        proxyType?: 'HTTP' | 'HTTPS' | 'SOCKS4' | 'SOCKS5'
     ): Promise<number> {
         const params: types.ApiHcaptchaParams = {
             key: this.apiKey,
             json: 1,
             method: 'hcaptcha',
             sitekey: sitekey,
-            pageurl: pageurl
+            pageurl: pageUrl
         };
+
+        if (proxyUrl !== undefined) {
+            params.proxy = proxyUrl;
+        }
+
+        if (proxyType !== undefined) {
+            params.proxytype = proxyType;
+        }
 
         const data = (await this.makeRequest(
             'GET',
@@ -73,7 +81,7 @@ export default class TwoCaptcha {
         initialWait?: number
     ): Promise<string> {
         if (initialWait !== undefined) {
-            await Promise.delay(initialWait);
+            await delay(initialWait);
         }
 
         let solution: string,
@@ -91,7 +99,7 @@ export default class TwoCaptcha {
                     throw err;
                 }
 
-                await Promise.delay(interval);
+                await delay(interval);
             }
         }
 
@@ -164,4 +172,12 @@ export default class TwoCaptcha {
             data.error_text
         );
     }
+}
+
+function delay(time: number): Promise<void> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, time);
+    });
 }

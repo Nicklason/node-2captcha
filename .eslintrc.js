@@ -17,6 +17,7 @@ module.exports = {
     rules: {
         'no-console': 'error',
         'tsdoc/syntax': 'error',
-        'prettier/prettier': 'error'
+        'prettier/prettier': 'error',
+        '@typescript-eslint/no-use-before-define': 0
     }
 };

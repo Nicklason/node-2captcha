@@ -26,8 +26,7 @@
     "homepage": "https://github.com/Nicklason/node-2captcha#readme",
     "dependencies": {
         "axios": "^0.19.2",
-        "axios-retry": "^3.1.8",
-        "bluebird-global": "^1.0.1"
+        "axios-retry": "^3.1.8"
     },
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
